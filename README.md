@@ -1,6 +1,6 @@
 # Sort
 
-1. [ ] interchangeSort
+1. [x] interchangeSort
 1. [ ] selectionSort
 1. [ ] insertionSort
 1. [ ] quickSort
