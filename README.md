@@ -3,19 +3,9 @@
 - [x] interchangeSort
 - [x] selectionSort
 - [x] insertionSort
-- [ ] quickSort
+- [x] quickSort
 - [ ] mergeSort
-- [ ] shellSort
+- [x] shellSort
 - [ ] radixSort
 - [ ] heapSort
 - [ ] shakerSort
-
-interchangeSort
-selectionSort
-insertionSort
-quickSort
-mergeSort
-shellSort
-radixSort
-heapSort
-shakerSort

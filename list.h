@@ -40,6 +40,14 @@ public:
             tail = n;
         }
     }
+    Node *getHead()
+    {
+        return head;
+    }
+    Node *getTail()
+    {
+        return tail;
+    }
     void printList()
     {
         Node *temp = head;
@@ -48,6 +56,7 @@ public:
             cout << temp->data << " ";
             temp = temp->next;
         }
+        cout << endl;
     }
     void swapNode(Node *a, Node *b)
     {
@@ -57,6 +66,7 @@ public:
     }
     void interchangeSort()
     {
+        cout << "interchangeSort: ";
         Node *pos = head;
         while (pos)
         {
@@ -74,6 +84,7 @@ public:
     }
     void selectionSort()
     {
+        cout << "selectionSort: ";
         Node *temp = head;
 
         while (temp)
@@ -98,6 +109,7 @@ public:
     }
     void insertionSort()
     {
+        cout << "insertionSort: ";
         Node *pos = head->next;
         while (pos)
         {
@@ -118,5 +130,83 @@ public:
             }
             pos = pos->next;
         }
+    }
+    void quickSort(Node *left, Node *right)
+    {
+        if (left == right)
+        {
+            return;
+        }
+        Node *pivot = right;
+        Node *i = left;
+        Node *j = left;
+
+        while (j != pivot)
+        {
+            if (j->data <= pivot->data)
+            {
+                swapNode(i, j);
+                i = i->next;
+            }
+            j = j->next;
+        }
+        swapNode(i, pivot);
+        if (i != left)
+        {
+            quickSort(left, i->prev);
+        }
+        if (i != right)
+        {
+            quickSort(i->next, right);
+        }
+    }
+    void shellSort()
+    {
+        cout << "shellSort: ";
+        int len, step = 0;
+        Node *p = head;
+        while (p)
+        {
+            len++;
+            p = p->next;
+        }
+        while (2 * (3 * step + 1) < len)
+        {
+            step = 3 * step + 1;
+        }
+        for (step; step > 0; step /= 3)
+        {
+            for (int i = step; i > 0; i--)
+            {
+                for (int j = step - i; j < len; j += step)
+                {
+                    int k = 0;
+                    Node *p = head;
+                    while (k < j)
+                    {
+                        p = p->next;
+                        k++;
+                    }
+                    Node *c = p;
+                    int jump = k + step;
+                    while (jump < len)
+                    {
+                        while (k < jump)
+                        {
+                            c = c->next;
+                            k++;
+                        }
+                        if (c->data < p->data)
+                        {
+                            swapNode(c, p);
+                        }
+                        jump += step;
+                    }
+                }
+            }
+        }
+    }
+    void mergeSort()
+    {
     }
 };
