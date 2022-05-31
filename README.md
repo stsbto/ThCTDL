@@ -1,11 +1,21 @@
 # Sort
 
 - [x] interchangeSort
-- [ ] selectionSort
-- [ ] insertionSort
+- [x] selectionSort
+- [x] insertionSort
 - [ ] quickSort
 - [ ] mergeSort
 - [ ] shellSort
 - [ ] radixSort
 - [ ] heapSort
-- [ ] ShakeSort
+- [ ] shakerSort
+
+interchangeSort
+selectionSort
+insertionSort
+quickSort
+mergeSort
+shellSort
+radixSort
+heapSort
+shakerSort
