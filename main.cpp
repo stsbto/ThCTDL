@@ -12,6 +12,8 @@ int main()
     // l.insertionSort();
     // l.quickSort(l.getHead(), l.getTail());
     l.shellSort();
+    // l.radixSort();
+    // l.MergeSort(l.getHead());
 
     l.printList();
     return 0;

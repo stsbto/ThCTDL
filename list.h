@@ -162,15 +162,14 @@ public:
     }
     void shellSort()
     {
-        cout << "shellSort: ";
         int len, step = 0;
-        Node *p = head;
-        while (p)
+        Node *temp = head;
+        while (temp)
         {
             len++;
-            p = p->next;
+            temp = temp->next;
         }
-        while (2 * (3 * step + 1) < len)
+        while (2 * (3 * step + 1) <= len)
         {
             step = 3 * step + 1;
         }
@@ -180,33 +179,33 @@ public:
             {
                 for (int j = step - i; j < len; j += step)
                 {
-                    int k = 0;
                     Node *p = head;
+                    int k = 0;
                     while (k < j)
                     {
                         p = p->next;
                         k++;
                     }
                     Node *c = p;
-                    int jump = k + step;
-                    while (jump < len)
+                    int temp = k + step;
+                    while (temp <= len)
                     {
-                        while (k < jump)
+                        while (k < temp)
                         {
                             c = c->next;
                             k++;
                         }
-                        if (c->data < p->data)
+                        if (c != NULL)
                         {
-                            swapNode(c, p);
+                            if (c->data <= p->data)
+                            {
+                                swapNode(c, p);
+                            }
                         }
-                        jump += step;
+                        temp += step;
                     }
                 }
             }
         }
-    }
-    void mergeSort()
-    {
     }
 };
