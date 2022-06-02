@@ -6,6 +6,6 @@
 - [x] quickSort
 - [ ] mergeSort
 - [x] shellSort
-- [ ] radixSort
+- [x] radixSort
 - [ ] heapSort
 - [ ] shakerSort
