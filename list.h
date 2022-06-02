@@ -208,4 +208,18 @@ public:
             }
         }
     }
+    int getMax()
+    {
+        Node *temp = head;
+        int max = temp->data;
+        while (temp)
+        {
+            if (max < temp->data)
+            {
+                max = temp->data;
+            }
+            temp = temp->next;
+        }
+        return max;
+    }
 };
