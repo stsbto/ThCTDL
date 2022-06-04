@@ -212,6 +212,7 @@ public:
     {
         Node *temp = head;
         int max = temp->data;
+
         while (temp)
         {
             if (max < temp->data)
@@ -221,5 +222,52 @@ public:
             temp = temp->next;
         }
         return max;
+    }
+    int getLenght()
+    {
+        Node *temp = head;
+        int len = 0;
+        while (temp)
+        {
+            len++;
+            temp = temp->next;
+        }
+        return len;
+    }
+    void countingSort(int place)
+    {
+        Node *temp = head;
+        const int max = 10;
+        int count[max] = {};
+        int output[getLenght()];
+        while (temp)
+        {
+            count[(temp->data / place) % 10]++;
+            temp = temp->next;
+        }
+        for (int i = 1; i < max; i++)
+        {
+            count[i] += count[i - 1];
+        }
+        temp = tail;
+        while (temp)
+        {
+            output[count[(temp->data / place) % 10] - 1] = temp->data;
+            count[(temp->data / place) % 10]--;
+            temp = temp->prev;
+        }
+        temp = head;
+        for (int i = 0; i < getLenght(); i++)
+        {
+            temp->data = output[i];
+            temp = temp->next;
+        }
+    }
+    void radixSort()
+    {
+        for (int place = 1; getMax() / place > 0; place *= 10)
+        {
+            countingSort(place);
+        }
     }
 };
