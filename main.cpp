@@ -1,5 +1,5 @@
 #include "list.h"
-#include "finout.h"
+#include "readwrite.h"
 int main()
 {
     List l;
@@ -8,8 +8,8 @@ int main()
     // l.selectionSort();
     // l.insertionSort();
     // l.quickSort(l.getHead(), l.getTail());
-    // l.shellSort();
-    l.radixSort();
+    l.shellSort();
+    // l.radixSort();
     l.printList();
     writeFile(l);
     return 0;
