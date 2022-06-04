@@ -8,4 +8,4 @@
 - [x] shellSort
 - [x] radixSort
 - [x] heapSort (array)
-- [ ] shakerSort
+- [x] shakerSort
