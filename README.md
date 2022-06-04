@@ -7,5 +7,5 @@
 - [ ] mergeSort
 - [x] shellSort
 - [x] radixSort
-- [ ] heapSort
+- [ ] heapSort (array)
 - [ ] shakerSort
