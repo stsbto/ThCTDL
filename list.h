@@ -270,4 +270,31 @@ public:
             countingSort(place);
         }
     }
+    void shakerSort()
+    {
+        Node *left = head;
+        Node *right = tail;
+        Node *temp = head;
+        while (left != right)
+        {
+            for (Node *i = left; i != right; i = i->next)
+            {
+                if (i->data > i->next->data)
+                {
+                    swapNode(i, i->next);
+                    temp = i;
+                }
+            }
+            right = temp;
+            for (Node *i = right; i != left; i = i->prev)
+            {
+                if (i->data < i->prev->data)
+                {
+                    swapNode(i, i->prev);
+                    temp = i;
+                }
+            }
+            left = temp;
+        }
+    }
 };

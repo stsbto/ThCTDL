@@ -8,7 +8,8 @@ int main()
     // l.selectionSort();
     // l.insertionSort();
     // l.quickSort(l.getHead(), l.getTail());
-    l.shellSort();
+    // l.shellSort();
+    l.shakerSort();
     // l.radixSort();
     l.printList();
     writeFile(l);
