@@ -1,3 +1,4 @@
+//interchangeSort selectionSort insertionSort quickSort shellSort radixSort shakerSort
 #include <iostream>
 #pragma once
 using namespace std;
