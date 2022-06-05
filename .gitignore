@@ -1,9 +1,4 @@
 *.exe
 .vscode
 output.txt
-test.cpp
 folder
-
-
-
-        README.md heapsort.cpp input.txt list.h main.cpp mergesort.cpp readwrite.h temp/README.md temp/heapsort.cpp temp/input.txt temp/list.h temp/main.cpp temp/mergesort.cpp temp/readwrite.h
