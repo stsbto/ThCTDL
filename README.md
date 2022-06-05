@@ -1,4 +1,4 @@
-# Sort checklist
+# Sorting
 
 - [x] selectionSort
 - [x] insertionSort
