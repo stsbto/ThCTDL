@@ -5,7 +5,7 @@
 using namespace std;
 void readFile(List &l)
 {
-    cout << "Da doc file" << endl;
+    cout << "Da doc file txt: " << endl;
     int data;
     ifstream myfile("input.txt");
     while (!myfile.eof())

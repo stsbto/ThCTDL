@@ -9,8 +9,9 @@ int main()
     // l.insertionSort();
     // l.quickSort(l.getHead(), l.getTail());
     // l.shellSort();
-    l.shakerSort();
-    // l.radixSort();
+    // l.shakerSort();
+    l.radixSort();
+    cout << "Sort: " << endl;
     l.printList();
     writeFile(l);
     return 0;
