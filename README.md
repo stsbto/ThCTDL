@@ -4,7 +4,7 @@
 - [x] selectionSort
 - [x] insertionSort
 - [x] quickSort
-- [ ] mergeSort
+- [x] mergeSort
 - [x] shellSort
 - [x] radixSort
 - [x] heapSort (array)
