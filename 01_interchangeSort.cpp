@@ -115,5 +115,6 @@ int main()
     l.interchangeSort();
     cout << "interchangerSort: " << endl;
     l.printList();
+    writeFile(l);
     return 0;
 }
