@@ -38,7 +38,7 @@ void heapSort(int arr[], int n, int i)
 }
 void readFile(int arr[], int *p)
 {
-    cout << "Da doc file txt: " << endl;
+    cout << "Da doc file txt:  " << endl;
     int data;
     ifstream myfile("input.txt");
     int i = 0;
