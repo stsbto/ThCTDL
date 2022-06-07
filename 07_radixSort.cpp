@@ -96,7 +96,7 @@ public:
         Node *temp = head;
         const int max = 10;
         int count[max] = {};
-        int output[getLenght()];
+        int *output = new int[100]; // list
         while (temp)
         {
             count[(temp->data / place) % 10]++;
