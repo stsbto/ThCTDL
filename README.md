@@ -1,10 +1,10 @@
 # Sorting
 
-- [x] selectionSort
+- [x] interchangSort
 - [x] insertionSort
-- [x] quickSort
-- [x] mergeSort
-- [x] mergeSort
+- [x] selectionSort
+- [] quickSort (bug)
+- [] mergeSort (bug)
 - [x] shellSort
 - [x] radixSort
 - [x] heapSort (array)
