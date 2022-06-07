@@ -59,7 +59,7 @@ public:
     {
         if (head->next != NULL)
         {
-            Node *head1;
+            Node *head1 = head;
             Node *head2 = head;
             int len = getLenght(head);
             for (int i = 0; i < len / 2; i++)
