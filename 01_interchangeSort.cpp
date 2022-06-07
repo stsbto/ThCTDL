@@ -42,10 +42,6 @@ public:
     {
         return head;
     }
-    Node *getTail()
-    {
-        return tail;
-    }
     void printList()
     {
         Node *temp = head;

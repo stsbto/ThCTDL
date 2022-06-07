@@ -140,5 +140,6 @@ int main()
     l.mergerSort(l.getHead());
     cout << "mergeSort: " << endl;
     l.printList();
+    writeFile(l);
     return 0;
 }

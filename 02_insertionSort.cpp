@@ -46,10 +46,6 @@ public:
     {
         return head;
     }
-    Node *getTail()
-    {
-        return tail;
-    }
     void printList()
     {
         Node *temp = head;
@@ -121,5 +117,6 @@ int main()
     l.insertionSort();
     cout << "insertionSort: " << endl;
     l.printList();
+    writeFile(l);
     return 0;
 }

@@ -45,10 +45,6 @@ public:
     {
         return head;
     }
-    Node *getTail()
-    {
-        return tail;
-    }
     void printList()
     {
         Node *temp = head;
@@ -159,5 +155,6 @@ int main()
     l.radixSort();
     cout << "radixSort: " << endl;
     l.printList();
+    writeFile(l);
     return 0;
 }

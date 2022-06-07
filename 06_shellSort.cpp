@@ -6,12 +6,10 @@ class Node
 {
 public:
     int data;
-    Node *prev;
     Node *next;
     Node(int data)
     {
         this->data = data;
-        prev = NULL;
         next = NULL;
     }
 };
@@ -37,7 +35,6 @@ public:
         else
         {
             tail->next = n;
-            n->prev = tail;
             tail = n;
         }
     }
@@ -145,5 +142,6 @@ int main()
     l.shellSort();
     cout << "shellSort: " << endl;
     l.printList();
+    writeFile(l);
     return 0;
 }

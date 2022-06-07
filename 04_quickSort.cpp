@@ -127,5 +127,6 @@ int main()
     l.quickSort(l.getHead(), l.getTail());
     cout << "quickSort: " << endl;
     l.printList();
+    writeFile(l);
     return 0;
 }
