@@ -1,4 +1,3 @@
-// interchangeSort selectionSort insertionSort quickSort shellSort radixSort shakerSort
 #include <iostream>
 #include <fstream>
 using namespace std;
@@ -62,55 +61,18 @@ public:
 
     void selectionSort()
     {
-
-        Node *temp = head;
-
-        while (temp)
+        for (Node *i = head; i != tail; i = i->next)
         {
-            Node *pos = temp->next;
-            if (!pos)
+            Node *min = i;
+            for (Node *j = i->next; j != NULL; j = j->next)
             {
-                return;
-            }
-            Node *min = pos;
-            while (pos)
-            {
-                if (min->data > pos->data)
+                if (min->data > j->data)
                 {
-                    min = pos;
+                    min = j;
                 }
-                pos = pos->next;
             }
-            swapNode(min, temp);
-            temp = temp->next;
+            swapNode(i, min);
         }
-    }
-
-    int getMax()
-    {
-        Node *temp = head;
-        int max = temp->data;
-
-        while (temp)
-        {
-            if (max < temp->data)
-            {
-                max = temp->data;
-            }
-            temp = temp->next;
-        }
-        return max;
-    }
-    int getLenght()
-    {
-        Node *temp = head;
-        int len = 0;
-        while (temp)
-        {
-            len++;
-            temp = temp->next;
-        }
-        return len;
     }
 };
 void readFile(List &l)

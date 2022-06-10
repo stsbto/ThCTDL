@@ -1,4 +1,3 @@
-// interchangeSort selectionSort insertionSort quickSort shellSort radixSort shakerSort
 #include <iostream>
 #include <fstream>
 using namespace std;
@@ -73,26 +72,23 @@ public:
             return;
         }
         Node *pivot = right;
-        Node *i = left;
         Node *j = left;
-
-        while (j != pivot)
+        for (Node *i = left; i != right; i = i->next)
         {
-            if (j->data <= pivot->data)
+            if (i->data <= pivot->data)
             {
                 swapNode(i, j);
-                i = i->next;
+                j = j->next;
             }
-            j = j->next;
         }
-        swapNode(i, pivot);
-        if (i != left)
+        swapNode(j, pivot);
+        if (j != left)
         {
-            quickSort(left, i->prev);
+            quickSort(left, j->prev);
         }
-        if (i != right)
+        if (j != right)
         {
-            quickSort(i->next, right);
+            quickSort(j->next, right);
         }
     }
 };

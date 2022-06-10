@@ -1,4 +1,3 @@
-// interchangeSort selectionSort insertionSort quickSort shellSort radixSort shakerSort
 #include <iostream>
 #include <fstream>
 using namespace std;

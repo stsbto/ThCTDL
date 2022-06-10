@@ -62,15 +62,20 @@ public:
         a->data = b->data;
         b->data = data;
     }
-    void shellSort()
+    int getLength()
     {
-        int len, step = 0;
-        Node *temp = head;
-        while (temp)
+        int len = 0;
+        for (Node *i = head; i != NULL; i = i->next)
         {
             len++;
-            temp = temp->next;
         }
+        return len;
+    }
+    void shellSort()
+    {
+        int len = getLength();
+        int step = 0;
+        Node *temp = head;
         while (2 * (3 * step + 1) <= len)
         {
             step = 3 * step + 1;
@@ -83,19 +88,17 @@ public:
                 {
                     Node *p = head;
                     int k = 0;
-                    while (k < j)
+                    for (k = 0; k < j; k++)
                     {
                         p = p->next;
-                        k++;
                     }
                     Node *c = p;
                     int temp = k + step;
-                    while (temp <= len)
+                    for (temp; temp < len; temp += step)
                     {
-                        while (k < temp)
+                        for (k; k < temp; k++)
                         {
                             c = c->next;
-                            k++;
                         }
                         if (c != NULL)
                         {
@@ -104,7 +107,6 @@ public:
                                 swapNode(c, p);
                             }
                         }
-                        temp += step;
                     }
                 }
             }
