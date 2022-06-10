@@ -87,29 +87,26 @@ public:
         }
         return len;
     }
+    // 56  78  12  36  199 14  67  62
     void countingSort(int place)
     {
-        Node *temp = head;
-        const int max = 10;
-        int count[max] = {};
+        int count[10] = {};
         int *output = new int[100]; // list
-        while (temp)
+
+        for (Node *i = head; i != NULL; i = i->next)
         {
-            count[(temp->data / place) % 10]++;
-            temp = temp->next;
+            count[(i->data / place) % 10]++;
         }
-        for (int i = 1; i < max; i++)
+        for (int i = 1; i <= 9; i++)
         {
             count[i] += count[i - 1];
         }
-        temp = tail;
-        while (temp)
+        for (Node *i = tail; i != NULL; i = i->prev)
         {
-            output[count[(temp->data / place) % 10] - 1] = temp->data;
-            count[(temp->data / place) % 10]--;
-            temp = temp->prev;
+            output[count[(i->data / place) % 10] - 1] = i->data;
+            count[(i->data / place) % 10]--;
         }
-        temp = head;
+        Node *temp = head;
         for (int i = 0; i < getLenght(); i++)
         {
             temp->data = output[i];
