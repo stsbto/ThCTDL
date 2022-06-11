@@ -52,24 +52,31 @@ public:
         }
         return len;
     }
-    void mergerSort(Node *&head)
+    void *mergeSort(Node *&head)
     {
         if (head->next != NULL)
         {
-            Node *head1 = head;
-            Node *head2 = head;
-            int len = getLenght(head);
-            for (int i = 0; i < len / 2; i++)
-            {
-                head1 = head2;
-                head2 = head2->next;
-            }
-            head1->next = NULL;
-            head1 = head;
-            mergerSort(head1);
-            mergerSort(head2);
-            head = merge(head1, head2);
+            Node *second = split(head);
+            Node *first = head;
+            // printList(first);
+            mergeSort(first);
+            mergeSort(second);
+            head = merge(first, second);
         }
+    }
+    Node *split(Node *&head)
+    {
+
+        Node *slow = head;
+        Node *fast = head;
+        while (fast->next && fast->next->next)
+        {
+            fast = fast->next->next;
+            slow = slow->next;
+        }
+        Node *temp = slow->next;
+        slow->next = NULL;
+        return temp;
     }
     Node *merge(Node *&head1, Node *&head2)
     {
@@ -95,7 +102,7 @@ public:
         return newhead;
     }
 
-    void printList()
+    void printList(Node *head)
     {
         Node *temp = head;
         while (temp)
@@ -133,10 +140,10 @@ int main()
 {
     List l;
     readFile(l);
-    l.printList();
-    l.mergerSort(l.getHead());
+    l.printList(l.getHead());
+    l.mergeSort(l.getHead());
     cout << "mergeSort: " << endl;
-    l.printList();
+    l.printList(l.getHead());
     writeFile(l);
     return 0;
 }
