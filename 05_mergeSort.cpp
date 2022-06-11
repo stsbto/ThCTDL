@@ -58,7 +58,6 @@ public:
         {
             Node *second = split(head);
             Node *first = head;
-            // printList(first);
             mergeSort(first);
             mergeSort(second);
             head = merge(first, second);
@@ -66,15 +65,15 @@ public:
     }
     Node *split(Node *&head)
     {
-
-        Node *slow = head;
+        Node *temp = head;
         Node *fast = head;
+        Node *slow = head;
         while (fast->next && fast->next->next)
         {
             fast = fast->next->next;
             slow = slow->next;
         }
-        Node *temp = slow->next;
+        temp = slow->next;
         slow->next = NULL;
         return temp;
     }
