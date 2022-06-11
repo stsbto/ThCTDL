@@ -60,8 +60,7 @@ public:
         cout << endl;
     }
     void swapNode(Node *a, Node *b)
-    {
-        int data = a->data;
+    {   int data = a->data;
         a->data = b->data;
         b->data = data;
     }

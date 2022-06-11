@@ -66,7 +66,7 @@ public:
         Node *temp = head;
         int max = temp->data;
 
-        while (temp)
+        while (temp != NULL)
         {
             if (max < temp->data)
             {
@@ -99,7 +99,7 @@ public:
         }
         for (int i = 1; i <= 9; i++)
         {
-            count[i] += count[i - 1];
+            count[i] = count[i] + count[i - 1];
         }
         for (Node *i = tail; i != NULL; i = i->prev)
         {
@@ -115,9 +115,9 @@ public:
     }
     void radixSort()
     {
-        for (int place = 1; getMax() / place > 0; place *= 10)
+        for (int place = 1; 199 / place > 0; place *= 10)
         {
-            countingSort(place);
+            countingSort(1000);
         }
     }
 };

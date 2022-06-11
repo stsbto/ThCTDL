@@ -78,13 +78,13 @@ public:
         Node *temp = head;
         while (2 * (3 * step + 1) <= len)
         {
-            step = 3 * step + 1;
+            step = 3 * step + 1; // step = 4
         }
-        for (step; step > 0; step /= 3)
+        for (step; step > 0; step = step / 3)
         {
-            for (int i = step; i > 0; i--)
+            for (int i = step; i > 0; i--) //
             {
-                for (int j = step - i; j < len; j += step)
+                for (int j = step - i; j < len; j = j + step)
                 {
                     Node *p = head;
                     int k = 0;
