@@ -100,7 +100,6 @@ public:
 int main()
 {
     List l;
-
     l.insert(41);
     l.insert(5);
     l.insert(7);
